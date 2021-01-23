@@ -1,5 +1,5 @@
 require "rubythinking/version"
+require "vega"
 
 module Rubythinking
-  class Error < StandardError; end
 end

@@ -46,3 +46,10 @@ jupyter notebook
 
 By installing the gem, some other dependency gems will get installed for you that are
 convenient helpers in the notebooks.
+
+If you are creating a new Jupyter notebook with iruby, then you can load all code
+used by `rubythinking` with
+
+```Ruby
+require "rubythinking"
+```
