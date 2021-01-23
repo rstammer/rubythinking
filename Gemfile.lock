@@ -1,0 +1,57 @@
+PATH
+  remote: .
+  specs:
+    rubythinking (0.1.0)
+      ffi-rzmq
+      iruby
+      iruby-chartkick
+      vega
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bond (0.5.1)
+    chartkick (3.4.2)
+    data_uri (0.1.0)
+    diff-lcs (1.4.4)
+    ffi (1.14.2)
+    ffi-rzmq (2.0.7)
+      ffi-rzmq-core (>= 1.0.7)
+    ffi-rzmq-core (1.0.7)
+      ffi
+    iruby (0.4.0)
+      bond (~> 0.5)
+      data_uri (~> 0.1)
+      mimemagic (~> 0.3)
+      multi_json (~> 1.11)
+    iruby-chartkick (0.2.1)
+      chartkick
+      iruby
+    mimemagic (0.3.5)
+    multi_json (1.15.0)
+    rake (12.3.3)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
+    rspec-core (3.10.0)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-support (3.10.0)
+    vega (0.1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rake (~> 12.0)
+  rspec (~> 3.0)
+  rubythinking!
+
+BUNDLED WITH
+   2.1.4
