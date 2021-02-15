@@ -2,6 +2,14 @@
 
 Let's do the _Statistical Rethinking_ journey in Ruby!
 
+### Links to compiled web versions of the notebooks
+
+#### Chapter 2
+
+* [2M1](https://www.robinstammer.de/rubythinking/solutions/2m1)
+* [2M2](https://www.robinstammer.de/rubythinking/solutions/2m2)
+* [2H1 and 2H2](https://www.robinstammer.de/rubythinking/solutions/2h1_2h2)
+
 ### FAQ
 
 ### Q: What is the purpose of this?
