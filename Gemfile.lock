@@ -2,6 +2,9 @@ PATH
   remote: .
   specs:
     rubythinking (0.1.0)
+      cmd_stan_rb
+      croupier
+      distribution
       ffi-rzmq
       iruby
       vega
@@ -10,8 +13,11 @@ GEM
   remote: https://rubygems.org/
   specs:
     bond (0.5.1)
+    cmd_stan_rb (0.4.0)
+    croupier (1.6.0)
     data_uri (0.1.0)
     diff-lcs (1.4.4)
+    distribution (0.8.0)
     ffi (1.14.2)
     ffi-rzmq (2.0.7)
       ffi-rzmq-core (>= 1.0.7)
@@ -38,7 +44,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.0)
-    vega (0.1.1)
+    vega (0.1.2)
 
 PLATFORMS
   ruby
