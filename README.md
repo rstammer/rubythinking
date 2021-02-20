@@ -10,6 +10,10 @@ Let's do the _Statistical Rethinking_ journey in Ruby!
 * [2M2](https://www.robinstammer.de/rubythinking/solutions/2m2)
 * [2H1 and 2H2](https://www.robinstammer.de/rubythinking/solutions/2h1_2h2)
 
+#### Chapter 3
+
+* [Fun content: Sampling from a Binomial](https://www.robinstammer.de/rubythinking/binomial)
+
 ### FAQ
 
 ### Q: What is the purpose of this?
