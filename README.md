@@ -2,7 +2,7 @@
 
 Let's do the _Statistical Rethinking_ journey in Ruby!
 
-### Links to compiled web versions of the notebooks
+## Links to compiled web versions of the notebooks
 
 #### Chapter 2
 
@@ -14,7 +14,7 @@ Let's do the _Statistical Rethinking_ journey in Ruby!
 
 * [Fun content: Sampling from a Binomial](https://www.robinstammer.de/rubythinking/binomial)
 
-### FAQ
+## FAQ
 
 ### Q: What is the purpose of this?
 
@@ -65,3 +65,15 @@ used by `rubythinking` with
 ```Ruby
 require "rubythinking"
 ```
+
+### Q: Can I participate?
+
+I'd appreciate this very much! ☀️ This project is very incomplete and there are tons of excercises and snippets of the book
+that await being ported to Ruby by someone. Unfortunately, I can only do it from time to time and I'd love having people joining
+this initiative.
+
+If you are interested, feel free to pick up any part of the book you are interested in, try replicating or adopting it with Ruby and
+then either support an iruby notebook to [the notebooks folder](https://github.com/rstammer/rubythinking/tree/master/notebooks) or _anything else you like_ to this repository.
+Supplementary Ruby code can go somewhere in the [the lib folder](https://github.com/rstammer/rubythinking/tree/master/lib).
+
+Even tiny contributions are rewarded with extra positive karma 😉
