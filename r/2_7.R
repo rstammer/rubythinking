@@ -1,4 +1,4 @@
-﻿W <- 6
+﻿f <- 6
 L <- 3
 
 curve(dbeta(x, W+1, L+1), from = 0, to = 1)
