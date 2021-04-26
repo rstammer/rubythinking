@@ -14,6 +14,10 @@ Let's do the _Statistical Rethinking_ journey in Ruby!
 
 * [Fun content: Sampling from a Binomial](https://www.robinstammer.de/rubythinking/binomial)
 
+## Ruby ported code snippets from the chapters
+
+* [Inline chapter snippets](https://github.com/rstammer/rubythinking/blob/master/notebooks/0_all_snippets_from_book.ipynb)
+
 ## FAQ
 
 ### Q: What is the purpose of this?
