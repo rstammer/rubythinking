@@ -69,6 +69,11 @@ used by `rubythinking` with
 
 ```Ruby
 require "rubythinking"
+include Rubythinking
+
+dbinom(6, prob: 0.5, size: 9) # => 0.1640625
+rbinom(10, prob: 0.5, size: 5) # => [2, 2, 1, 0, 4, 1, 3, 1, 3, 1]
+…
 ```
 
 ### Q: Can I participate?
