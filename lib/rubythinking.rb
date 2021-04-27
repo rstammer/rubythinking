@@ -10,4 +10,8 @@ module Rubythinking
   def dbinom(value, size:, prob:)
     Rubythinking::Distributions::Binomial.density(value: value, success: prob, size: size)
   end
+
+  def rbinom(n, size:, prob:)
+    Rubythinking::Distributions::Binomial.samples(n, success: prob, size: size)
+  end
 end

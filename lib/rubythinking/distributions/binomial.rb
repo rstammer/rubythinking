@@ -1,5 +1,10 @@
 ﻿class Rubythinking::Distributions::Binomial
   class << self
+    def samples(n, size:, success:)
+      dist = Croupier::Distributions::Binomial.new(size: size, success: success)
+      samples = dist.to_enum.take(n)
+    end
+
     def density(value:, size:, success:)
       # Use variable names often used in math
       # textbooks and wikipedia to have code
