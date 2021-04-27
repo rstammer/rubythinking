@@ -1,5 +1,16 @@
 ﻿class Rubythinking::Distributions::Binomial
   class << self
+    def density(value:, size:, success:)
+      # Use variable names often used in math
+      # textbooks and wikipedia to have code
+      # close to the formula
+      k = value
+      n = size
+      p = success
+
+      (factorial(n).to_f / (factorial(k) * factorial(n - k))).to_f * (p**k) * ((1-p)**(n-k))
+    end
+
     def factorial(n)
       return 1 if n < 1
       n.to_i.downto(1).inject(:*)
@@ -7,7 +18,7 @@
 
 
     def likelihood(w, l, p)
-      (factorial(w+l).to_f / (factorial(w) * factorial(l))).to_f * (p**w) * ((1-p)**l)
+      density(value: w, size: (w+l), success: p)
     end
   end
 end

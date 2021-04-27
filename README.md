@@ -16,7 +16,8 @@ Let's do the _Statistical Rethinking_ journey in Ruby!
 
 ## Ruby ported code snippets from the chapters
 
-* [Inline chapter snippets](https://github.com/rstammer/rubythinking/blob/master/notebooks/0_all_snippets_from_book.ipynb)
+* [Chapter 0](https://github.com/rstammer/rubythinking/blob/master/notebooks/0_chapter_code_snippets.ipynb)
+* [Chapter 2](https://github.com/rstammer/rubythinking/blob/master/notebooks/2_chapter_code_snippets.ipynb)
 
 ## FAQ
 
