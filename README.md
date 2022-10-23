@@ -37,6 +37,11 @@ to run the notebooks.
 
 The second edition!
 
+
+### Q: You are often using this in Ruby based notebooks. Can use it without them?
+
+Sure. Just install the gem and play with it in any other Ruby environment you use!
+
 ### Q: I'm new to Ruby but want to run your Ruby based notebooks. What should I do?
 
 First: You need to have Jupyter installed on your machine! Check [https://jupyter.org/install](https://jupyter.org/install) for
