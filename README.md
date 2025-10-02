@@ -1,5 +1,9 @@
 ﻿# rubythinking
 
+<p align="center">
+  <img src="rubythinking.svg" alt="RubyThinking Logo" width="200"/>
+</p>
+
 Let's do the _Statistical Rethinking_ journey in Ruby!
 
 ## Links to compiled web versions of the notebooks

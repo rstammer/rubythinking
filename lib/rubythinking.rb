@@ -1,9 +1,11 @@
 require "rubythinking/version"
 require "rubythinking/distributions"
 require "rubythinking/distributions/binomial"
-require "vega"
 require "cmd_stan_rb"
 require "croupier"
+require "iruby/chartkick"
+
+include IRuby::Chartkick
 
 module Rubythinking
   # Mimicks R API
