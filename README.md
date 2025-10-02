@@ -1,8 +1,8 @@
-﻿# rubythinking
-
 <p align="center">
-  <img src="rubythinking.svg" alt="RubyThinking Logo" width="200"/>
+  <img src="rubythinking.svg" alt="RubyThinking Logo" width="300"/>
 </p>
+
+# Rubythinking
 
 Let's do the _Statistical Rethinking_ journey in Ruby!
 
