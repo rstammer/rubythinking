@@ -2,6 +2,12 @@ require 'matrix'
 require 'set'
 
 module Rubythinking
+  class InvalidFormulaError < StandardError; end
+  class MissingDataError < StandardError; end
+  class NotEstimatedError < StandardError; end
+  class ConvergenceError < StandardError; end
+  class InvalidStartError < StandardError; end
+
   class Quap
     attr_reader :formulas, :data, :start
 
@@ -22,13 +28,6 @@ module Rubythinking
     end
 
     def estimate
-      # Extract parameters from formulas
-      parameters = extract_parameters
-      
-      # Debug: print extracted parameters
-      # puts "Extracted parameters: #{parameters.inspect}"
-      # puts "Formulas: #{@formulas.inspect}"
-      
       # Mock estimates based on detected parameters
       @coef = {}
       if parameters.include?('a') && parameters.include?('b')
@@ -74,6 +73,7 @@ module Rubythinking
 
     def summary
       check_estimated!
+      
       lines = []
       lines << "Quadratic approximation"
       lines << ""
@@ -82,17 +82,18 @@ module Rubythinking
         stderr = se[param]
         lines << "  #{param}: #{value.round(3)} (SE: #{stderr.round(3)})"
       end
+      
       lines.join("\n")
     end
 
     def samples(n: 1000, seed: nil)
       check_estimated!
-      Random.srand(seed) if seed
+      srand(seed) if seed
       
       result = {}
       @coef.each_with_index do |(param, value), i|
         variance = @vcov[i, i]
-        result[param] = Array.new(n) { value + Random.normal * Math.sqrt(variance) }
+        result[param] = Distributions::Normal.samples(n, value, Math.sqrt(variance))
       end
       result
     end
@@ -171,28 +172,27 @@ module Rubythinking
       end
     end
 
-    def extract_parameters
-      # Extract all parameters mentioned in formulas
-      parameters = Set.new
-      
-      @formulas.each do |formula|
-        # Look for parameters on the right side of ~
-        if formula.match(/~\s*(.+)/)
-          right_side = $1
-          # Extract parameter names (simple regex for now)
-          params = right_side.scan(/\b([a-zA-Z_]\w*)\b/).flatten
-          params.each { |p| parameters.add(p) unless is_function_or_distribution?(p) }
-        end
-      end
-      
-      # Remove data variables and numbers
-      data_vars = extract_data_variables
-      parameters.subtract(data_vars.map(&:to_s))
-      
-      # Also remove any numeric-looking things
-      parameters.reject! { |p| p.match(/^\d+$/) }
-      
-      parameters.to_a.sort
+    def parameters
+      @parameters ||= 
+        begin
+          parameters = Set.new
+          
+          @formulas.each do |formula|
+            # Look for parameters on the right side of ~
+            if formula.match(/~\s*(.+)/)
+              right_side = $1
+              # Extract parameter names (simple regex for now)
+              params = right_side.scan(/\b([a-zA-Z_]\w*)\b/).flatten
+              params.each { |p| parameters.add(p) unless is_function_or_distribution?(p) }
+            end
+          end
+          
+          # Remove data variables and numbers
+          data_vars = extract_data_variables
+          parameters.subtract(data_vars.map(&:to_s))
+          parameters.reject! { |p| p.match(/^\d+$/) }
+          parameters.to_a.sort
+        end 
     end
 
     def is_function_or_distribution?(word)
@@ -273,23 +273,5 @@ module Rubythinking
       
       values.sum.to_f / values.length
     end
-  end
-
-  # Exception classes
-  class InvalidFormulaError < StandardError; end
-  class MissingDataError < StandardError; end
-  class NotEstimatedError < StandardError; end
-  class ConvergenceError < StandardError; end
-  class InvalidStartError < StandardError; end
-end
-
-# Add extension for normal random numbers
-class Random
-  def self.normal(mean = 0, std = 1)
-    # Box-Muller transformation
-    u1 = rand
-    u2 = rand
-    z0 = Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math::PI * u2)
-    mean + std * z0
   end
 end
