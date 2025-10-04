@@ -1,6 +1,7 @@
 require "rubythinking/version"
 require "rubythinking/distributions"
 require "rubythinking/distributions/binomial"
+require "rubythinking/quap"
 require "cmd_stan_rb"
 require "croupier"
 require "iruby/chartkick"

@@ -6,6 +6,7 @@ PATH
       croupier
       distribution
       iruby-chartkick
+      matrix
 
 GEM
   remote: https://rubygems.org/
@@ -40,6 +41,7 @@ GEM
       chartkick (~> 5.1.0)
       iruby
     logger (1.7.0)
+    matrix (0.4.3)
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
