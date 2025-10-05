@@ -74,15 +74,63 @@ By installing the gem, some other dependency gems will get installed for you tha
 convenient helpers in the notebooks.
 
 If you are creating a new Jupyter notebook with iruby, then you can load all code
-used by `rubythinking` with
+used by `rubythinking` like …
 
-```Ruby
+
+## Some examples
+
+The gem provides Ruby versions of common statistical functions used throughout the Statistical Rethinking book:
+
+```ruby
 require "rubythinking"
 include Rubythinking
 
-dbinom(6, prob: 0.5, size: 9) # => 0.1640625
+# Binomial distribution
+dbinom(6, prob: 0.5, size: 9)  # => 0.1640625
 rbinom(10, prob: 0.5, size: 5) # => [2, 2, 1, 0, 4, 1, 3, 1, 3, 1]
-…
+
+# Normal distribution  
+dnorm(0, mean: 0, sd: 1)        # => 0.3989422804014327
+rnorm(5, mean: 10, sd: 2)       # => [8.2, 12.1, 9.8, 11.5, 10.3]
+
+# Quadratic approximation (quap)
+data = {
+  height: [150, 160, 170, 180, 190],
+  weight: [50, 60, 70, 80, 90]
+}
+
+formulas = [
+  'weight ~ normal(mu, 1)',
+  'mu ~ a + b * height', 
+  'a ~ normal(0, 50)',
+  'b ~ normal(0, 10)'
+]
+
+model = quap(formulas: formulas, data: data)
+puts model.estimate.summary
+# => Quadratic approximation
+#    Parameter estimates:
+#      a: -99.999 (SE: 5.394)
+#      b: 0.999 (SE: 0.032)
+```
+
+### Chartkick Integration
+
+The gem includes built-in charting capabilities through Chartkick, perfect for visualizing statistical results in Jupyter notebooks:
+
+```ruby
+# Line charts for trend visualization
+plot_data = {50 => 150, 60 => 160, 70 => 170, 80 => 180, 90 => 190}
+line_chart(plot_data, min: 0)
+
+# Area charts for posterior distributions
+posterior_samples = {0.1 => 15, 0.2 => 100, 0.3 => 701, 0.4 => 1294, 0.5 => 1994}
+area_chart(posterior_samples)
+
+# Histograms from sampling distributions
+samples = rbinom(1000, prob: 0.7, size: 15)
+histogram_data = samples.group_by(&:itself).transform_values(&:count)
+column_chart(histogram_data)
 ```
 
 ### Q: Can I participate?
