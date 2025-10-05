@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     rubythinking (0.3.0)
-      cmd_stan_rb
       croupier
       distribution
       iruby-chartkick
@@ -13,7 +12,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     chartkick (5.1.5)
-    cmd_stan_rb (0.4.0)
     croupier (1.6.0)
     data_uri (0.1.0)
     date (3.4.1)

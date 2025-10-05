@@ -28,7 +28,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "iruby-chartkick"
   spec.add_runtime_dependency "distribution"
   spec.add_runtime_dependency "croupier"
-  spec.add_runtime_dependency "cmd_stan_rb"
   spec.add_runtime_dependency "matrix"
   spec.add_runtime_dependency "ostruct"
 end
