@@ -2,16 +2,16 @@ PATH
   remote: .
   specs:
     rubythinking (0.3.0)
-      cmd_stan_rb
       croupier
       distribution
       iruby-chartkick
+      matrix
+      ostruct
 
 GEM
   remote: https://rubygems.org/
   specs:
-    chartkick (4.1.3)
-    cmd_stan_rb (0.4.0)
+    chartkick (5.1.5)
     croupier (1.6.0)
     data_uri (0.1.0)
     date (3.4.1)
@@ -36,15 +36,17 @@ GEM
       logger
       mime-types (>= 3.3.1)
       multi_json (~> 1.11)
-    iruby-chartkick (0.3.1)
-      chartkick (~> 4.1.0)
+    iruby-chartkick (0.4.0)
+      chartkick (~> 5.1.0)
       iruby
     logger (1.7.0)
+    matrix (0.4.3)
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
     mime-types-data (3.2025.0924)
     multi_json (1.17.0)
+    ostruct (0.6.1)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -52,9 +54,10 @@ GEM
       date
       stringio
     rake (12.3.3)
-    rdoc (6.14.2)
+    rdoc (6.15.0)
       erb
       psych (>= 4.0.0)
+      tsort
     reline (0.6.2)
       io-console (~> 0.5)
     rspec (3.13.1)
@@ -71,10 +74,10 @@ GEM
       rspec-support (~> 3.13.0)
     rspec-support (3.13.6)
     stringio (3.1.7)
+    tsort (0.2.0)
 
 PLATFORMS
   arm64-darwin-23
-  ruby
 
 DEPENDENCIES
   rake (~> 12.0)
