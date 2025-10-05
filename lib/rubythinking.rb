@@ -26,4 +26,11 @@ module Rubythinking
   def rnorm(n, mean: 0, sd: 1)
     Rubythinking::Distributions::Normal.samples(n, mean, sd)
   end
+
+  def quap(formulas:, data:, start: nil)
+    Rubythinking::Quap.new(formulas: formulas, data: data, start: start)
+  end
+
+  # Make methods available at module level too
+  module_function :dbinom, :rbinom, :dnorm, :rnorm, :quap
 end
