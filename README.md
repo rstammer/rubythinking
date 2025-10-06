@@ -112,6 +112,15 @@ puts model.estimate.summary
 #    Parameter estimates:
 #      a: -99.999 (SE: 5.394)
 #      b: 0.999 (SE: 0.032)
+
+# Built-in datasets
+Rubythinking::Dataset.available
+# => ["cherry_blossoms", "howell", "kline", "milk", "reedfrogs", "ucb_admit", "waffle_divorce"]
+
+milk = Rubythinking::Dataset.load("milk")
+cherry = Rubythinking::Dataset.load("cherry_blossoms")
+
+milk.to_df
 ```
 
 ### Chartkick Integration

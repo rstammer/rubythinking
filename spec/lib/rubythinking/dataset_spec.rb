@@ -12,6 +12,31 @@ RSpec.describe Rubythinking::Dataset do
   let(:sample_columns) { ["height", "weight", "age", "male"] }
   let(:dataset) { described_class.new(sample_data, sample_columns) }
 
+  describe '.available' do
+    it 'returns list of available dataset names' do
+      available_datasets = described_class.available
+      
+      expect(available_datasets).to be_an(Array)
+      expect(available_datasets).to include('howell')
+      expect(available_datasets).to include('cherry_blossoms')
+      expect(available_datasets).to include('milk')
+      expect(available_datasets).to include('ucb_admit')
+      expect(available_datasets).to include('kline')
+      expect(available_datasets).to include('reedfrogs')
+      expect(available_datasets).to include('waffle_divorce')
+      expect(available_datasets).to eq(available_datasets.sort)
+    end
+    
+    it 'only returns CSV files without extension' do
+      available_datasets = described_class.available
+      
+      available_datasets.each do |name|
+        expect(name).not_to include('.csv')
+        expect(name).to be_a(String)
+      end
+    end
+  end
+
   describe '.load' do
     context 'when dataset exists' do
       it 'loads the howell dataset' do
@@ -178,7 +203,7 @@ RSpec.describe Rubythinking::Dataset do
     end
   end
 
-  describe 'integration with real howell dataset' do
+  describe 'integration with real datasets' do
     let(:howell) { described_class.load('howell') }
     
     it 'can perform complex operations on real data' do
@@ -196,6 +221,20 @@ RSpec.describe Rubythinking::Dataset do
       csv_string = howell.to_csv
       expect(csv_string).to include("height,weight,age,male")
       expect(csv_string.split("\n").length).to eq(howell.size + 1) # +1 for header
+    end
+    
+    it 'can load other datasets' do
+      milk = described_class.load('milk')
+      expect(milk.columns).to include('species', 'kcal.per.g', 'mass')
+      expect(milk.size).to be > 0
+      
+      cherry_blossoms = described_class.load('cherry_blossoms')
+      expect(cherry_blossoms.columns).to include('year', 'doy', 'temp')
+      expect(cherry_blossoms.size).to be > 0
+      
+      ucb = described_class.load('ucb_admit')
+      expect(ucb.columns).to include('admit', 'reject', 'applicant.gender', 'dept')
+      expect(ucb.size).to be > 0
     end
   end
 end

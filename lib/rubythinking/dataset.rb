@@ -10,6 +10,12 @@ module Rubythinking
       @columns = columns
     end
     
+    def self.available
+      data_dir = File.join(File.dirname(__FILE__), '../../data')
+      csv_files = Dir.glob(File.join(data_dir, '*.csv'))
+      csv_files.map { |file| File.basename(file, '.csv') }.sort
+    end
+    
     def self.load(name)
       file_path = File.join(File.dirname(__FILE__), '../../data', "#{name}.csv")
       
