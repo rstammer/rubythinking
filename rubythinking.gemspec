@@ -31,4 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "matrix"
   spec.add_runtime_dependency "ostruct"
   spec.add_runtime_dependency "daru"
+  spec.add_runtime_dependency "csv"
 end
