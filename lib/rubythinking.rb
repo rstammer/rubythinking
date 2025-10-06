@@ -3,6 +3,7 @@ require "rubythinking/distributions"
 require "rubythinking/distributions/binomial"
 require "rubythinking/distributions/normal"
 require "rubythinking/quap"
+require "rubythinking/dataset"
 require "croupier"
 require "iruby/chartkick"
 
