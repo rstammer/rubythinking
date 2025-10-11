@@ -5,6 +5,7 @@ require "rubythinking/distributions/normal"
 require "rubythinking/quap"
 require "rubythinking/dataset"
 require "rubythinking/summary"
+require "rubythinking/histogram"
 require "croupier"
 require "iruby/chartkick"
 
@@ -35,5 +36,9 @@ module Rubythinking
     puts Rubythinking::Summary.new(dataframe).to_s
   end
 
-  module_function :dbinom, :rbinom, :dnorm, :rnorm, :quap, :precis
+  def dens(vector, bins: 30)
+    Rubythinking::Histogram.new(vector, bins: bins).to_chartkick
+  end
+
+  module_function :dbinom, :rbinom, :dnorm, :rnorm, :quap, :precis, :dens
 end

@@ -3,7 +3,8 @@
 ## Head (not released yet)
 
 * Add built-in datasets
-* Implement `precis` method
+* Implement `precis` method from rethinking
+* Implement `dens` method from rethinking
 
 ## 0.4.0 
 
