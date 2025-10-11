@@ -18,11 +18,11 @@ Let's do the _Statistical Rethinking_ journey in Ruby!
 
 * [Fun content: Sampling from a Binomial](https://www.robinstammer.de/rubythinking/binomial)
 
-## Ruby ported code snippets from the chapters
+## Ruby notebooks following the chapters very closely
 
 * [Chapter 0](https://github.com/rstammer/rubythinking/blob/master/notebooks/0_chapter_code_snippets.ipynb)
-* [Chapter 2](https://github.com/rstammer/rubythinking/blob/master/notebooks/2_chapter_code_snippets.ipynb)
-* [Chapter 4](https://github.com/rstammer/rubythinking/blob/master/notebooks/4_chapter_howell.ipynb)
+* [Chapter 2 - Small Worlds and Large Worlds](https://github.com/rstammer/rubythinking/blob/master/notebooks/2_chapter_code_snippets.ipynb)
+* [Chapter 4 - Geocentric Models](https://github.com/rstammer/rubythinking/blob/master/notebooks/4_chapter_howell.ipynb)
 
 ## FAQ
 
