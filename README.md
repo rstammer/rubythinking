@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="rubythinking.svg" alt="RubyThinking Logo" width="300"/>
+  <img src="rubythinking.svg" alt="RubyThinking Logo" width="500"/>
 </p>
 
 # Rubythinking
@@ -21,12 +21,8 @@ Let's do the _Statistical Rethinking_ journey in Ruby!
 ## Ruby ported code snippets from the chapters
 
 * [Chapter 0](https://github.com/rstammer/rubythinking/blob/master/notebooks/0_chapter_code_snippets.ipynb)
-* [Chapter 2](htt
-ps://github.com/rstammer/rubythinking/blob/master/notebooks/2_chapter_code_snippets.ipynb)
-* [Chapter 4](htt
-ps://github.com/rstammer/rubythinking/blob/master/notebooks/4_chapter_howell.ipynb)
-
-
+* [Chapter 2](https://github.com/rstammer/rubythinking/blob/master/notebooks/2_chapter_code_snippets.ipynb)
+* [Chapter 4](https://github.com/rstammer/rubythinking/blob/master/notebooks/4_chapter_howell.ipynb)
 
 ## FAQ
 
