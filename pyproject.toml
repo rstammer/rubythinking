@@ -1,0 +1,9 @@
+[project]
+name = "rubythinking"
+version = "0.1.0"
+description = "Python dependencies for rubythinking notebooks"
+requires-python = ">=3.10"
+dependencies = [
+    "jupyter>=1.0.0",
+    "notebook>=7.0.0",
+]

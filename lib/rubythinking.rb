@@ -4,6 +4,7 @@ require "rubythinking/distributions/binomial"
 require "rubythinking/distributions/normal"
 require "rubythinking/quap"
 require "rubythinking/dataset"
+require "rubythinking/summary"
 require "croupier"
 require "iruby/chartkick"
 
@@ -30,5 +31,9 @@ module Rubythinking
     Rubythinking::Quap.new(formulas: formulas, data: data, start: start)
   end
 
-  module_function :dbinom, :rbinom, :dnorm, :rnorm, :quap
+  def precis(dataframe)
+    puts Rubythinking::Summary.new(dataframe).to_s
+  end
+
+  module_function :dbinom, :rbinom, :dnorm, :rnorm, :quap, :precis
 end

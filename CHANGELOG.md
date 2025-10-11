@@ -3,6 +3,7 @@
 ## Head (not released yet)
 
 * Add built-in datasets
+* Implement `precis` method
 
 ## 0.4.0 
 

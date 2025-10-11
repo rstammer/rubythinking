@@ -153,3 +153,14 @@ then either support an iruby notebook to [the notebooks folder](https://github.c
 Supplementary Ruby code can go somewhere in the [the lib folder](https://github.com/rstammer/rubythinking/tree/master/lib).
 
 Even tiny contributions are rewarded with extra positive karma 😉
+
+# Development notes
+
+I often develop having some IRuby jupyter notebook running. Then, I'm making changes to the source code and 
+restart the notebook server along reloading the gem by
+
+```sh 
+gem install rubythinking-0.4.0.gem && uv run jupyter notebook
+```
+
+As you see by this, I often use `uv` for managing the python dependencies like jupyter. Of course, with easy adjustments you can run this in any pythonic env you want, all you need is having jupyter notebooks available.
